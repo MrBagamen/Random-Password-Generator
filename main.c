@@ -19,8 +19,7 @@ int main()
     password[16] = '\0';
 
     //Write to File
-    FILE *file = NULL;
-    file = fopen("password.txt", "w");
+    FILE *file = fopen("password.txt", "w");
     fprintf(file, "Password is: %s\n", password);
     fclose(file);
 
