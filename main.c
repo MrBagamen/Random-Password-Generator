@@ -17,7 +17,7 @@ int main()
 
     //Write to File
     FILE *file = fopen("password.txt", "w");
-    fprintf(file, "Password is: %s\n", password);
+    fputs(password, file);
     fclose(file);
 
     return 0;
