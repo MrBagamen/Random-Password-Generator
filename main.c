@@ -8,11 +8,10 @@ int main()
     srand(time(NULL));
     char password[17];
     const char *legalcharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    int i, num;
+    int i;
     for(i = 0; i < 16; i++)
     {
-        num = rand() % strlen(legalcharacters);
-        password[i] = legalcharacters[num];
+        password[i] = legalcharacters[rand() % strlen(legalcharacters)];
     }
     password[16] = '\0';
 
