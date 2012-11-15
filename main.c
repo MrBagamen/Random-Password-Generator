@@ -8,7 +8,7 @@ int main()
     char password[17];
     const char *legalcharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     int i;
-    FILE* file;
+    FILE *file;
     
     srand(time(NULL));
     
