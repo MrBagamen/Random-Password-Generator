@@ -1,27 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
+
+#define PASSWORD_LENGTH 16
 
 int main()
 {
-    char password[17];
-    const char *legalcharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    char password[PASSWORD_LENGTH];
+    const char legalcharacters[] = {
+    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+    'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+    '0','1','2','3','4','5','6','7','8','9'
+    };
     int i;
     FILE *file;
     
     srand(time(NULL));
     
-    for(i = 0; i < 16; i++)
+    for (i = 0; i < PASSWORD_LENGTH; ++i)
     {
-        password[i] = legalcharacters[rand() % strlen(legalcharacters)];
+        password[i] = legalcharacters[rand() % sizeof(legalcharacters)];
     }
-    
-    password[16] = '\0';
 
     /* Write to File */
     file = fopen("password.txt", "w");
-    fputs(password, file);
+    fwrite(password, 1, PASSWORD_LENGTH, file);
     fclose(file);
 
     return 0;
