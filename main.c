@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 16
-
 int main()
 {
+    int PASSWORD_LENGTH;
+    printf("Input length of password: ");
+    scanf("%d", &PASSWORD_LENGTH);
+
     char password[PASSWORD_LENGTH];
     const char legalcharacters[] = {
     'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
